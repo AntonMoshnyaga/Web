@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles/style.css">
+	<!-- Подключение Slick Slider CSS -->
+<link rel="stylesheet" type="text/css" href="src\assets\fonts\slick-master\slick-master\slick\slick.css">
+<link rel="stylesheet" type="text/css" href="src\assets\fonts\slick-master\slick-master\slick\slick-theme.css">
+
+<!-- Подключение jQuery (если еще не подключен) -->
+<script src="src\assets\fonts\jquery-main\src\jquery.js"></script>
+
+<!-- Подключение Slick Slider JS -->
+<script type="text/javascript" src="src\assets\fonts\slick-master\slick-master\slick\slick.min.js"></script>
+
+    <title>Smart</title>
+</head>
+<body>
+	<div id="__next">
+		<main>
+			<div class="app" id="app">
+				<div class="loading-screen fullscreen hidden"><img src="src\assets\images\loading.gif" alt="Loading..." class="loading-screen__spinner"></div>
+				<header>
+					<a href="/">
+						<!-- <img src="" class="logofull" alt="SmartCinema"> -->
+						<img src="src/assets/images/logo_icon.svg" class="logo icon" alt="SmartCinema">
+					  </a>					  
+					<nav>
+						<ul>
+							<li><a class="nav-link" href="#">Розклад</a></li>
+							<li><a class="nav-link" href="#">Фільми</a></li>
+						</ul>
+					</nav>
+					<div class="flex md-gap align-center">
+						<div class="buttons flex md-gap">
+							<div class="select-branch">
+								<div class="outside-click-handler">
+									<button class="select-branch-button">
+										<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map-marker-alt" class="svg-inline--fa fa-map-marker-alt fa-w-12 pin-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+											<path fill="currentColor" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
+										</svg>
+										<p>Оберіть місто</p>
+									</button>
+								</div>
+							</div>
+							<div class="outside-click-handler">
+								<div class="account-button">
+									<buttonid="registrationButton" onclick="openRegistration()">
+										<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user-ninja" class="svg-inline--fa fa-user-ninja fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="inherit">
+											<path fill="currentColor" d="M325.4 289.2L224 390.6 122.6 289.2C54 295.3 0 352.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-70.2-54-127.1-122.6-133.2zM32 192c27.3 0 51.8-11.5 69.2-29.7 15.1 53.9 64 93.7 122.8 93.7 70.7 0 128-57.3 128-128S294.7 0 224 0c-50.4 0-93.6 29.4-114.5 71.8C92.1 47.8 64 32 32 32c0 33.4 17.1 62.8 43.1 80-26 17.2-43.1 46.6-43.1 80zm144-96h96c17.7 0 32 14.3 32 32H144c0-17.7 14.3-32 32-32z"></path>
+										</svg><span>Вхід/Реестрація</span>
+									</button>
+									<script>
+										function openRegistration() {
+										  window.location.href = 'registration.html';
+										}
+									  </script>
+								</div>
+							</div>
+						</div>
+						<div class="outside-click-handler">
+							<div class="sidebar-container">
+								<button class="sidebar-button">
+									<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+										<path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
+									</svg>
+								</button>
+								<div class="sidebar closed" data-sidebar-opened="false">
+									<div class="buttons">
+										<div class="select-branch">
+											<div class="outside-click-handler">
+												<button class="select-branch-button">
+													<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map-marker-alt" class="svg-inline--fa fa-map-marker-alt fa-w-12 pin-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+														<path fill="currentColor" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
+													</svg>
+													<p>Оберіть місто</p>
+												</button>
+											</div>
+										</div>
+										<div class="outside-click-handler">
+											<div class="account-button">
+												<button>
+													<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user-ninja" class="svg-inline--fa fa-user-ninja fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" color="inherit">
+														<path fill="currentColor" d="M325.4 289.2L224 390.6 122.6 289.2C54 295.3 0 352.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-70.2-54-127.1-122.6-133.2zM32 192c27.3 0 51.8-11.5 69.2-29.7 15.1 53.9 64 93.7 122.8 93.7 70.7 0 128-57.3 128-128S294.7 0 224 0c-50.4 0-93.6 29.4-114.5 71.8C92.1 47.8 64 32 32 32c0 33.4 17.1 62.8 43.1 80-26 17.2-43.1 46.6-43.1 80zm144-96h96c17.7 0 32 14.3 32 32H144c0-17.7 14.3-32 32-32z"></path>
+													</svg><span>Вхід/Реестрація</span></button>
+											</div>
+										</div>
+									</div>
+									<ul class="links-array">
+										<li><a href="/">Головна</a></li>
+										<li><a href="#">Розклад</a></li>
+										<li><a href="#">Фільми</a></li>
+										<li><a href="#">Про нас</a></li>
+										<li><a href="#">Новини</a></li>
+										<li><a href="#">Бонусна програма</a></li>
+										<li><a href="#">Промокоди</a></li>
+										<li><a href="#">Ціни</a></li>
+										<li><a href="#">Зворотній зв'язок</a></li>
+										<li><a href="#">Кар'єра у нас</a></li>
+										<li><a href="#" target="_blank">Політика конфіденційності</a></li>
+										<li><a href="#">Договір оферти</a></li>
+										<li><a href="#">Контакти</a></li>
+									</ul>
+									<div class="socials">
+										<p>Ми в соцмережах</p>
+										<div class="social-links">
+											<a href="#" target="_blank" rel="noreferrer">
+												<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" class="svg-inline--fa fa-facebook fa-w-14 fa-2x faFacebook" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+													<path fill="currentColor" d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"></path>
+												</svg>
+											</a>
+											<a href="#" target="_blank" rel="noreferrer">
+												<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" class="svg-inline--fa fa-instagram fa-w-14 fa-2x faInstagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+													<path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+												</svg>
+											</a>
+											<a href="#" target="_blank" rel="noreferrer">
+												<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-messenger" class="svg-inline--fa fa-facebook-messenger fa-w-14 fa-2x faFacebookMessenger" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+													<path fill="currentColor" d="M224 32C15.9 32-77.5 278 84.6 400.6V480l75.7-42c142.2 39.8 285.4-59.9 285.4-198.7C445.8 124.8 346.5 32 224 32zm23.4 278.1L190 250.5 79.6 311.6l121.1-128.5 57.4 59.6 110.4-61.1-121.1 128.5z"></path>
+												</svg>
+											</a>
+											<a href="#" target="_blank" rel="noreferrer">
+												<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram" class="svg-inline--fa fa-telegram fa-w-16 fa-2x faTelegram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+													<path fill="currentColor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path>
+												</svg>
+											</a>
+											<a href="#" target="_blank" rel="noreferrer">
+												<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="viber" class="svg-inline--fa fa-viber fa-w-16 fa-2x faViber" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+													<path fill="currentColor" d="M444 49.9C431.3 38.2 379.9.9 265.3.4c0 0-135.1-8.1-200.9 52.3C27.8 89.3 14.9 143 13.5 209.5c-1.4 66.5-3.1 191.1 117 224.9h.1l-.1 51.6s-.8 20.9 13 25.1c16.6 5.2 26.4-10.7 42.3-27.8 8.7-9.4 20.7-23.2 29.8-33.7 82.2 6.9 145.3-8.9 152.5-11.2 16.6-5.4 110.5-17.4 125.7-142 15.8-128.6-7.6-209.8-49.8-246.5zM457.9 287c-12.9 104-89 110.6-103 115.1-6 1.9-61.5 15.7-131.2 11.2 0 0-52 62.7-68.2 79-5.3 5.3-11.1 4.8-11-5.7 0-6.9.4-85.7.4-85.7-.1 0-.1 0 0 0-101.8-28.2-95.8-134.3-94.7-189.8 1.1-55.5 11.6-101 42.6-131.6 55.7-50.5 170.4-43 170.4-43 96.9.4 143.3 29.6 154.1 39.4 35.7 30.6 53.9 103.8 40.6 211.1zm-139-80.8c.4 8.6-12.5 9.2-12.9.6-1.1-22-11.4-32.7-32.6-33.9-8.6-.5-7.8-13.4.7-12.9 27.9 1.5 43.4 17.5 44.8 46.2zm20.3 11.3c1-42.4-25.5-75.6-75.8-79.3-8.5-.6-7.6-13.5.9-12.9 58 4.2 88.9 44.1 87.8 92.5-.1 8.6-13.1 8.2-12.9-.3zm47 13.4c.1 8.6-12.9 8.7-12.9.1-.6-81.5-54.9-125.9-120.8-126.4-8.5-.1-8.5-12.9 0-12.9 73.7.5 133 51.4 133.7 139.2zM374.9 329v.2c-10.8 19-31 40-51.8 33.3l-.2-.3c-21.1-5.9-70.8-31.5-102.2-56.5-16.2-12.8-31-27.9-42.4-42.4-10.3-12.9-20.7-28.2-30.8-46.6-21.3-38.5-26-55.7-26-55.7-6.7-20.8 14.2-41 33.3-51.8h.2c9.2-4.8 18-3.2 23.9 3.9 0 0 12.4 14.8 17.7 22.1 5 6.8 11.7 17.7 15.2 23.8 6.1 10.9 2.3 22-3.7 26.6l-12 9.6c-6.1 4.9-5.3 14-5.3 14s17.8 67.3 84.3 84.3c0 0 9.1.8 14-5.3l9.6-12c4.6-6 15.7-9.8 26.6-3.7 14.7 8.3 33.4 21.2 45.8 32.9 7 5.7 8.6 14.4 3.8 23.6z"></path>
+												</svg>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+				<main>
+					<div class="page">
+						<div class="home-page">
+							<div class="hero-carousel">
+								<div class="buttons">
+									<button class="slider-button previous">
+										<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 330" xml:space="preserve">
+											<path id="XMLID_225_" d="M175.6,4.4c5.9,5.9,5.9,15.4,0,21.2L36.2,165l139.4,139.4c5.9,5.9,5.9,15.4,0,21.2  c-5.9,5.9-15.4,5.9-21.2,0l-150-150C1.6,172.8,0,169,0,165s1.6-7.8,4.4-10.6l150-150C160.3-1.5,169.7-1.5,175.6,4.4z"></path>
+										</svg>
+									</button>
+									<button class="slider-button next">
+										<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 330" xml:space="preserve">
+											<path id="XMLID_225_" d="M4.4,325.6c-5.9-5.9-5.9-15.4,0-21.2L143.8,165L4.4,25.6c-5.9-5.9-5.9-15.4,0-21.2c5.9-5.9,15.4-5.9,21.2,0  l150,150c2.8,2.8,4.4,6.6,4.4,10.6s-1.6,7.8-4.4,10.6l-150,150C19.7,331.5,10.3,331.5,4.4,325.6z"></path>
+										</svg>
+									</button>
+								</div>
+								<div class="slick-slider slick-initialized" dir="ltr">
+									<div class="slick-list">
+										<div class="slick-track" style="width: 30240px; opacity: 1; transform: translate3d(-7840px, 0px, 0px); transition: transform 500ms ease 0s;">
+											<div data-index="-1" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Звук свободи</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="0" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/golodn-gri-balada-pro-spvochih-ptashok-zmj/background.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Голодні ігри: Балада про співочих пташок і змій</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="1" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/koli-zlo-hovatsja/background.webp&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Коли зло ховається</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="2" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/pershij-kod/background.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Перший код</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="3" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/gendelik/background.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Генделик</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="4" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/marveli/background_O4amASf.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Марвели</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">12</span><span class="movie-labels__screen-type">3D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="5" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/pjat-nochej-u-fredd/background_JwKIwiU.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>П'ять ночей у Фредді</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="6" class="slick-slide slick-active slick-current" tabindex="-1" aria-hidden="false" style="outline: none; width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/trol-znovu-razom/background.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Тролі: Знову разом</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">0</span><span class="movie-labels__screen-type">3D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="7" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/vartov-dzhunglv-2-navkolo-svtu/background.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Вартові джунглів 2. Навколо світу</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">0</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="8" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/vartov-dzhunglv-2-chastina-navkolo-svtu/background.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Вартові джунглів 2 частина. Навколо світу</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">0</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="9" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/kop-na-drajv-porjatunok-babus/background.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Коп на драйві: Порятунок бабусі</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="10" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/prokljattja-schurolova/background.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Прокляття щуролова</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">18</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="11" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/opale-listja/background.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Опале листя</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="12" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/zvuk-svobodi/background.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Звук свободи</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="13" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/golodn-gri-balada-pro-spvochih-ptashok-zmj/background.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Голодні ігри: Балада про співочих пташок і змій</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="14" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/koli-zlo-hovatsja/background.webp&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Коли зло ховається</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="15" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/pershij-kod/background.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Перший код</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="16" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/gendelik/background.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Генделик</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="17" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/marveli/background_O4amASf.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Марвели</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">12</span><span class="movie-labels__screen-type">3D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="18" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/pjat-nochej-u-fredd/background_JwKIwiU.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>П'ять ночей у Фредді</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="19" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/trol-znovu-razom/background.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Тролі: Знову разом</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">0</span><span class="movie-labels__screen-type">3D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="20" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/vartov-dzhunglv-2-navkolo-svtu/background.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Вартові джунглів 2. Навколо світу</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">0</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="21" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/vartov-dzhunglv-2-chastina-navkolo-svtu/background.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Вартові джунглів 2 частина. Навколо світу</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">0</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="22" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/kop-na-drajv-porjatunok-babus/background.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Коп на драйві: Порятунок бабусі</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="23" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/prokljattja-schurolova/background.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Прокляття щуролова</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">18</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="24" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/opale-listja/background.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Опале листя</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div data-index="25" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1120px;">
+												<div>
+													<div class="hero-slide">
+														<div style="position: absolute; inset: 0px; background-image: url(&quot;https://smartcinema.ua//media/img/zvuk-svobodi/background.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+														<div class="movie-info-container">
+															<div class="movie-info"><a class="movie-title" href="#"><h1>Звук свободи</h1></a>
+																<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div><span class="movie-trailer-link"><a href="#" target="_blank" rel="noreferrer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg> Дивитись трейлер</a></span>
+																<a class="button movie-tickets" href="#">
+																	<button>Придбати квитки</button>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="movies">
+								<h2>Фільми в SmartCinema</h2>
+								<div class="tabs-container">
+									<div class="tabs"><span class="tab-title active">Дивитися зараз</span><span class="tab-title ">Дивитися незабаром</span></div>
+									<div class="content">
+										<div class="movie-carousel">
+											<div class="buttons">
+												<button class="slider-button previous">
+													<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 330" xml:space="preserve">
+														<path id="XMLID_225_" d="M175.6,4.4c5.9,5.9,5.9,15.4,0,21.2L36.2,165l139.4,139.4c5.9,5.9,5.9,15.4,0,21.2  c-5.9,5.9-15.4,5.9-21.2,0l-150-150C1.6,172.8,0,169,0,165s1.6-7.8,4.4-10.6l150-150C160.3-1.5,169.7-1.5,175.6,4.4z"></path>
+													</svg>
+												</button>
+												<button class="slider-button next">
+													<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 330" xml:space="preserve">
+														<path id="XMLID_225_" d="M4.4,325.6c-5.9-5.9-5.9-15.4,0-21.2L143.8,165L4.4,25.6c-5.9-5.9-5.9-15.4,0-21.2c5.9-5.9,15.4-5.9,21.2,0  l150,150c2.8,2.8,4.4,6.6,4.4,10.6s-1.6,7.8-4.4,10.6l-150,150C19.7,331.5,10.3,331.5,4.4,325.6z"></path>
+													</svg>
+												</button>
+											</div>
+											<div class="slick-slider center slick-initialized" dir="ltr">
+												<div class="slick-list" style="padding: 0px 1rem;">
+													<div class="slick-track" style="width: 11190px; opacity: 1; transform: translate3d(-2238px, 0px, 0px);">
+														<div data-index="-4" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="-3" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">18</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="-2" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="-1" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="0" class="slick-slide slick-current" tabindex="-1" aria-hidden="true" style="outline: none; width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="1" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="2" class="slick-slide slick-active" tabindex="-1" aria-hidden="false" style="outline: none; width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="3" class="slick-slide slick-active slick-center" tabindex="-1" aria-hidden="false" style="outline: none; width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="4" class="slick-slide slick-active" tabindex="-1" aria-hidden="false" style="outline: none; width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">12</span><span class="movie-labels__screen-type">3D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="5" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="6" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">0</span><span class="movie-labels__screen-type">3D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="7" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">0</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="8" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">0</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="9" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="10" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">18</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="11" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="12" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="13" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;/src/assets/images/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="14" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;https://smartcinema.ua//media/img/koli-zlo-hovatsja/poster_75ejneH.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="15" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;https://smartcinema.ua//media/img/pershij-kod/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="16" tabindex="-1" class="slick-slide slick-center slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;https://smartcinema.ua//media/img/gendelik/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="17" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;https://smartcinema.ua//media/img/marveli/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">12</span><span class="movie-labels__screen-type">3D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="18" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;https://smartcinema.ua//media/img/pjat-nochej-u-fredd/poster_kVUa6nU.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="19" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;https://smartcinema.ua//media/img/trol-znovu-razom/poster.jpeg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">0</span><span class="movie-labels__screen-type">3D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="20" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;https://smartcinema.ua//media/img/vartov-dzhunglv-2-navkolo-svtu/poster_jY1h3J5.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">0</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="21" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;https://smartcinema.ua//media/img/vartov-dzhunglv-2-chastina-navkolo-svtu/poster_9tgB26w.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">0</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="22" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;https://smartcinema.ua//media/img/kop-na-drajv-porjatunok-babus/poster_fPvKPOh.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="23" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;https://smartcinema.ua//media/img/prokljattja-schurolova/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">18</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="24" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;https://smartcinema.ua//media/img/opale-listja/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div data-index="25" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 373px;">
+															<div>
+																<div class="movie-slide" style="min-width: 265px; min-height: 405px; background-image: url(&quot;https://smartcinema.ua//media/img/zvuk-svobodi/poster.jpg&quot;); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+																	<div class="movie-info ">
+																		<div class="labels">
+																			<div class="movie-labels small"><span class="movie-labels__age-restriction">16</span><span class="movie-labels__screen-type">2D</span><span data-tip="На цей фільм діють промокоди" class="movie-labels__promocode">%</span></div>
+																		</div>
+																		<div class="buy-ticket">
+																			<button class="button">Придбати квиток</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="news" class="news-and-sales">
+								<div class="news-carousel">
+									<div class="title">
+										<h2>Новини та акції</h2>
+										<div class="buttons">
+											<button class="slider-button previous">
+												<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 330" xml:space="preserve">
+													<path id="XMLID_225_" d="M175.6,4.4c5.9,5.9,5.9,15.4,0,21.2L36.2,165l139.4,139.4c5.9,5.9,5.9,15.4,0,21.2  c-5.9,5.9-15.4,5.9-21.2,0l-150-150C1.6,172.8,0,169,0,165s1.6-7.8,4.4-10.6l150-150C160.3-1.5,169.7-1.5,175.6,4.4z"></path>
+												</svg>
+											</button>
+											<button class="slider-button next">
+												<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 330" xml:space="preserve">
+													<path id="XMLID_225_" d="M4.4,325.6c-5.9-5.9-5.9-15.4,0-21.2L143.8,165L4.4,25.6c-5.9-5.9-5.9-15.4,0-21.2c5.9-5.9,15.4-5.9,21.2,0  l150,150c2.8,2.8,4.4,6.6,4.4,10.6s-1.6,7.8-4.4,10.6l-150,150C19.7,331.5,10.3,331.5,4.4,325.6z"></path>
+												</svg>
+											</button>
+										</div>
+									</div>
+									<div class="slick-slider slick-initialized" dir="ltr">
+										<div class="slick-list" style="height: 545px;">
+											<div class="slick-track" style="opacity: 1; transform: translate3d(-2880px, 0px, 0px); width: 9216px;">
+												<div data-index="-2" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 576px;">
+				
+												</div>
+												<div data-index="-1" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 576px;">
+													<div>
+														<div class="news-slide">
+															<div class="news-image"><img src="src\assets\images\9031C6F4-F6C8-4506-8007-997AE0751D5C.jpeg" alt="SMART-КЛУБ"></div>
+															<div class="flex column justify-space-between align-center height-full">
+																<div class="news-info"><span class="news-type Новини">Новини</span>
+																	<h3 class="news-title">SMART-КЛУБ</h3>
+																	<p class="news-description">Приєднуйся до клубу кіноманів SmartCinema та отримуй ексклюзивні подарунки!</p>
+																</div><a class="button" href="#">Дізнатися більше</a></div>
+														</div>
+													</div>
+												</div>
+												<div data-index="0" class="slick-slide slick-current" tabindex="-1" aria-hidden="true" style="outline: none; width: 576px;">
+												</div>
+												<div data-index="1" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 576px;">
+													
+												</div>
+												<div data-index="2" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 576px;">
+											
+												</div>
+												<div data-index="3" class="slick-slide slick-active" tabindex="-1" aria-hidden="false" style="outline: none; width: 576px;">
+													<div>
+														<div class="news-slide">
+															<div class="news-image"><img src="src\assets\images\News.jpeg" alt="SMART-БАР у твоєму телефоні!"></div>
+															<div class="flex column justify-space-between align-center height-full">
+																<div class="news-info"><span class="news-type Новини">Новини</span>
+																	<h3 class="news-title">SMART-БАР у твоєму телефоні!</h3>
+																	<p class="news-description">Неймовірно раді презентувати Вам нашу нову послугу Smart-Бар бот! Приєднуйся до Боту та роби замовлення улюблених смаколиків з бару онлайн! Швидко, зручно та без черг!</p>
+																</div><a class="button" href="#">Дізнатися більше</a></div>
+														</div>
+													</div>
+												</div>
+												<div data-index="4" class="slick-slide slick-active" tabindex="-1" aria-hidden="false" style="outline: none; width: 576px;">
+													<div>
+														<div class="news-slide">
+															<div class="news-image"><img src="src/assets/images/News 2.jpeg" alt="ДЕНЬ ГЛЯДАЧА КОЛИ ЗАБАЖАЄШ!"></div>
+															<div class="flex column justify-space-between align-center height-fusrc\assets\images\News 2.jpegll">
+																<div class="news-info"><span class="news-type Новини">Новини</span>
+																	<h3 class="news-title">ДЕНЬ ГЛЯДАЧА КОЛИ ЗАБАЖАЄШ!</h3>
+																	<p class="news-description">Саме для тебе у SmartCinema тепер є фільми, які можна подивитися зі знижкою у 30 грн! Ого! Невже це крута можливість заощадити? Ознайомся з деталями!</p>
+																</div><a class="button" href="#">Дізнатися більше</a></div>
+														</div>
+													</div>
+												</div>
+												<div data-index="5" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 576px;">
+													<div>
+														<div class="news-slide">
+															<div class="news-image"><img src="src\assets\images\News 3.jpg" alt="Прохання підтримати петицію"></div>
+															<div class="flex column justify-space-between align-center height-full">
+																<div class="news-info"><span class="news-type Новини">Новини</span>
+																	<h3 class="news-title">Прохання підтримати петицію</h3>
+																	<p class="news-description">Залишити український дубляж в кінотеатрах: https://petition.kmu.gov.ua/petitions/5121</p>
+																</div><a class="button" href="#">Дізнатися більше</a></div>
+														</div>
+													</div>
+												</div>
+												<div data-index="6" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 576px;">
+													<div>
+														<div class="news-slide">
+															<div class="news-image"><img src="src\assets\images\9031C6F4-F6C8-4506-8007-997AE0751D5C.jpeg" alt="SMART-КЛУБ"></div>
+															<div class="flex column justify-space-between align-center height-full">
+																<div class="news-info"><span class="news-type Новини">Новини</span>
+																	<h3 class="news-title">SMART-КЛУБ</h3>
+																	<p class="news-description">Приєднуйся до клубу кіноманів SmartCinema та отримуй ексклюзивні подарунки!</p>
+																</div><a class="button" href="#">Дізнатися більше</a></div>
+														</div>
+													</div>
+												</div>
+												<div data-index="7" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 576px;">
+													<div>
+														<div class="news-slide">
+															<div class="news-image"><img src="src\assets\images\News 4.jpeg" alt="Дії під час повітряної тривоги!"></div>
+															<div class="flex column justify-space-between align-center height-full">
+																<div class="news-info"><span class="news-type Новини">Новини</span>
+																	<h3 class="news-title">Дії під час повітряної тривоги!</h3>
+																	<p class="news-description">Ми працюємо, і ніщо нас не зупинить! І в сучасних реаліях хочемо розповісти тобі про порядок дій під час повітряної тривоги. Не зволікай і читай!)</p>
+																</div><a class="button" href="#">Дізнатися більше</a></div>
+														</div>
+													</div>
+												</div>
+												<div data-index="8" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 576px;">
+													<div>
+														<div class="news-slide">
+															<div class="news-image"><img src="src\assets\images\News 5.jpeg" alt="Нова бонусна програма!"></div>
+															<div class="flex column justify-space-between align-center height-full">
+																<div class="news-info"><span class="news-type Новини">Новини</span>
+																	<h3 class="news-title">Нова бонусна програма!</h3>
+																	<p class="news-description">Кіномани, ми до вас з крутезною новиною! Презентуємо оновлену бонусну програму! «Що нового?!» - тик тик «дізнатися далі»!</p>
+																</div><a class="button" href="#">Дізнатися більше</a></div>
+														</div>
+													</div>
+												</div>
+												<div data-index="9" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 576px;">
+													<div>
+														<div class="news-slide">
+															<div class="news-image"><img src="src\assets\images\partners_web.png" alt="Наші партнери"></div>
+															<div class="flex column justify-space-between align-center height-full">
+																<div class="news-info"><span class="news-type Новини">Новини</span>
+																	<h3 class="news-title">Наші партнери</h3>
+																	<p class="news-description">Нижче ви можете прочитати інформацію стосовно наших партнерів, яка напевно стане у пригоді.</p>
+																</div><a class="button" href="#">Дізнатися більше</a></div>
+														</div>
+													</div>
+												</div>
+												<div data-index="10" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 576px;">
+													<div>
+														<div class="news-slide">
+															<div class="news-image"><img src="src\assets\images\News.jpeg" alt="SMART-БАР у твоєму телефоні!"></div>
+															<div class="flex column justify-space-between align-center height-full">
+																<div class="news-info"><span class="news-type Новини">Новини</span>
+																	<h3 class="news-title">SMART-БАР у твоєму телефоні!</h3>
+																	<p class="news-description">Неймовірно раді презентувати Вам нашу нову послугу Smart-Бар бот! Приєднуйся до Боту та роби замовлення улюблених смаколиків з бару онлайн! Швидко, зручно та без черг!</p>
+																</div><a class="button" href="#">Дізнатися більше</a></div>
+														</div>
+													</div>
+												</div>
+												<div data-index="11" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 576px;">
+													<div>
+														<div class="news-slide">
+															<div class="news-image"><img src="src\assets\images\News 2.jpeg" alt="ДЕНЬ ГЛЯДАЧА КОЛИ ЗАБАЖАЄШ!"></div>
+															<div class="flex column justify-space-between align-center height-full">
+																<div class="news-info"><span class="news-type Новини">Новини</span>
+																	<h3 class="news-title">ДЕНЬ ГЛЯДАЧА КОЛИ ЗАБАЖАЄШ!</h3>
+																	<p class="news-description">Саме для тебе у SmartCinema тепер є фільми, які можна подивитися зі знижкою у 30 грн! Ого! Невже це крута можливість заощадити? Ознайомся з деталями!</p>
+																</div><a class="button" href="#">Дізнатися більше</a></div>
+														</div>
+													</div>
+												</div>
+												<div data-index="12" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 576px;">
+													<div>
+														<div class="news-slide">
+															<div class="news-image"><img src="src\assets\images\News 3.jpg" alt="Прохання підтримати петицію"></div>
+															<div class="flex column justify-space-between align-center height-full">
+																<div class="news-info"><span class="news-type Новини">Новини</span>
+																	<h3 class="news-title">Прохання підтримати петицію</h3>
+																	<p class="news-description">Залишити український дубляж в кінотеатрах: https://petition.kmu.gov.ua/petitions/5121</p>
+																</div><a class="button" href="#">Дізнатися більше</a></div>
+														</div>
+													</div>
+												</div>
+												<div data-index="13" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 576px;">
+													<div>
+														<div class="news-slide">
+															<div class="news-image"><img src="src\assets\images\9031C6F4-F6C8-4506-8007-997AE0751D5C.jpeg" alt="SMART-КЛУБ"></div>
+															<div class="flex column justify-space-between align-center height-full">
+																<div class="news-info"><span class="news-type Новини">Новини</span>
+																	<h3 class="news-title">SMART-КЛУБ</h3>
+																	<p class="news-description">Приєднуйся до клубу кіноманів SmartCinema та отримуй ексклюзивні подарунки!</p>
+																</div><a class="button" href="#">Дізнатися більше</a></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
+				<footer>
+					<div class="footer-content">
+						<div class="cinema-information"><img src="src\assets\images\logo long.png" class="logo undefined" alt="SmartCinema">
+							<div class="footer-content__contact">Гаряча лінія кінотеатру:
+								<div class="contacts">
+									<div class="contact"><span>Вінниця</span><a class="link" href="#">096-003-50-50</a></div>
+									<div class="contact"><span>Чернівці</span><a class="link" href="#">073-003-50-50</a></div>
+									<div class="contact"><span>Кропивницький</span><a class="link" href="#">095-008-50-50</a></div>
+								</div>
+							</div>
+						</div>
+						<ul class="links-array">
+							<li><a href="/">Головна</a></li>
+							<li><a href="#">Розклад</a></li>
+							<li><a href="#">Фільми</a></li>
+							<li><a href="#">Про нас</a></li>
+							<li><a href="#">Новини</a></li>
+							<li><a href="#">Бонусна програма</a></li>
+							<li><a href="#">Промокоди</a></li>
+							<li><a href="#">Ціни</a></li>
+							<li><a href="#">Зворотній зв'язок</a></li>
+							<li><a href="#">Кар'єра у нас</a></li>
+							<li><a href="#" target="_blank">Політика конфіденційності</a></li>
+							<li><a href="#">Договір оферти</a></li>
+							<li><a href="#">Контакти</a></li>
+						</ul>
+						<div class="social-and-mobile">
+							<div class="social-links">
+								<a href="#" target="_blank" rel="noreferrer">
+									<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" class="svg-inline--fa fa-facebook fa-w-14 fa-2x faFacebook" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+										<path fill="currentColor" d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"></path>
+									</svg>
+								</a>
+								<a href="#" target="_blank" rel="noreferrer">
+									<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" class="svg-inline--fa fa-instagram fa-w-14 fa-2x faInstagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+										<path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+									</svg>
+								</a>
+								<a href="#" target="_blank" rel="noreferrer">
+									<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-messenger" class="svg-inline--fa fa-facebook-messenger fa-w-14 fa-2x faFacebookMessenger" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+										<path fill="currentColor" d="M224 32C15.9 32-77.5 278 84.6 400.6V480l75.7-42c142.2 39.8 285.4-59.9 285.4-198.7C445.8 124.8 346.5 32 224 32zm23.4 278.1L190 250.5 79.6 311.6l121.1-128.5 57.4 59.6 110.4-61.1-121.1 128.5z"></path>
+									</svg>
+								</a>
+								<a href="#" target="_blank" rel="noreferrer">
+									<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram" class="svg-inline--fa fa-telegram fa-w-16 fa-2x faTelegram" role="img" xmlns="#" viewBox="0 0 496 512">
+										<path fill="currentColor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path>
+									</svg>
+								</a>
+								<a href="#" target="_blank" rel="noreferrer">
+									<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="viber" class="svg-inline--fa fa-viber fa-w-16 fa-2x faViber" role="img" xmlns="#" viewBox="0 0 512 512">
+										<path fill="currentColor" d="M444 49.9C431.3 38.2 379.9.9 265.3.4c0 0-135.1-8.1-200.9 52.3C27.8 89.3 14.9 143 13.5 209.5c-1.4 66.5-3.1 191.1 117 224.9h.1l-.1 51.6s-.8 20.9 13 25.1c16.6 5.2 26.4-10.7 42.3-27.8 8.7-9.4 20.7-23.2 29.8-33.7 82.2 6.9 145.3-8.9 152.5-11.2 16.6-5.4 110.5-17.4 125.7-142 15.8-128.6-7.6-209.8-49.8-246.5zM457.9 287c-12.9 104-89 110.6-103 115.1-6 1.9-61.5 15.7-131.2 11.2 0 0-52 62.7-68.2 79-5.3 5.3-11.1 4.8-11-5.7 0-6.9.4-85.7.4-85.7-.1 0-.1 0 0 0-101.8-28.2-95.8-134.3-94.7-189.8 1.1-55.5 11.6-101 42.6-131.6 55.7-50.5 170.4-43 170.4-43 96.9.4 143.3 29.6 154.1 39.4 35.7 30.6 53.9 103.8 40.6 211.1zm-139-80.8c.4 8.6-12.5 9.2-12.9.6-1.1-22-11.4-32.7-32.6-33.9-8.6-.5-7.8-13.4.7-12.9 27.9 1.5 43.4 17.5 44.8 46.2zm20.3 11.3c1-42.4-25.5-75.6-75.8-79.3-8.5-.6-7.6-13.5.9-12.9 58 4.2 88.9 44.1 87.8 92.5-.1 8.6-13.1 8.2-12.9-.3zm47 13.4c.1 8.6-12.9 8.7-12.9.1-.6-81.5-54.9-125.9-120.8-126.4-8.5-.1-8.5-12.9 0-12.9 73.7.5 133 51.4 133.7 139.2zM374.9 329v.2c-10.8 19-31 40-51.8 33.3l-.2-.3c-21.1-5.9-70.8-31.5-102.2-56.5-16.2-12.8-31-27.9-42.4-42.4-10.3-12.9-20.7-28.2-30.8-46.6-21.3-38.5-26-55.7-26-55.7-6.7-20.8 14.2-41 33.3-51.8h.2c9.2-4.8 18-3.2 23.9 3.9 0 0 12.4 14.8 17.7 22.1 5 6.8 11.7 17.7 15.2 23.8 6.1 10.9 2.3 22-3.7 26.6l-12 9.6c-6.1 4.9-5.3 14-5.3 14s17.8 67.3 84.3 84.3c0 0 9.1.8 14-5.3l9.6-12c4.6-6 15.7-9.8 26.6-3.7 14.7 8.3 33.4 21.2 45.8 32.9 7 5.7 8.6 14.4 3.8 23.6z"></path>
+									</svg>
+								</a>
+							</div>
+							<div class="mobile-apps">
+								<a href="#"><img src="src/assets/images/appStore.svg" alt="download ios app"></a>
+								<a href="#"><img src="src/assets/images/googlePlay.png" alt="download adroid app"></a>
+							</div>
+						</div>
+					</div>
+					<div class="partnership-and-copyright">
+						<p class="footer-content__partnership">Розміщення реклами та співпраця: <span>за телефоном <a href="#">+380 (95) 313-64-24</a></span><span> або </span><span>E-mail <a href="#">juliasmartcinema.1@gmail.com</a></span> </p>
+						<p class="footer-content__copyright">©2023 SmartCinema.ua; Всі права захищено.</p>
+					</div>
+				</footer>
+			</div>
+		</main>
+	</div>
+	<script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"BhQnoFnTIQu0k8gef0ktG","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script>
+	<script id="gtag-base" data-nscript="afterInteractive">
+	(function(w, d, s, l, i) {
+		w[l] = w[l] || [];
+		w[l].push({
+			'gtm.start': new Date().getTime(),
+			event: 'gtm.js'
+		});
+		var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s),
+			dl = l != 'dataLayer' ? '&l=' + l : '';
+		j.async = true;
+		j.src = '#' + i + dl;
+		f.parentNode.insertBefore(j, f);
+	})(window, document, 'script', 'dataLayer', 'GTM-W8SR7VL');
+	</script>
+	<next-route-announcer>
+		<p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;"></p>
+	</next-route-announcer>
+	<script type="text/javascript" id="">
+	! function(b, e, f, g, a, c, d) {
+		b.fbq || (a = b.fbq = function() {
+			a.callMethod ? a.callMethod.apply(a, arguments) : a.queue.push(arguments)
+		}, b._fbq || (b._fbq = a), a.push = a, a.loaded = !0, a.version = "2.0", a.queue = [], c = e.createElement(f), c.async = !0, c.src = g, d = e.getElementsByTagName(f)[0], d.parentNode.insertBefore(c, d))
+	}(window, document, "script", "#");
+	fbq("init", "257111321687765");
+	fbq("track", "PageView");
+	</script>
+	<noscript> <img height="1" width="1" src="https://www.facebook.com/tr?id=257111321687765&amp;ev=PageView
+&amp;noscript=1"> </noscript>
+	<script type="text/javascript" id="">
+	! function(b, e, f, g, a, c, d) {
+		b.fbq || (a = b.fbq = function() {
+			a.callMethod ? a.callMethod.apply(a, arguments) : a.queue.push(arguments)
+		}, b._fbq || (b._fbq = a), a.push = a, a.loaded = !0, a.version = "2.0", a.queue = [], c = e.createElement(f), c.async = !0, c.src = g, d = e.getElementsByTagName(f)[0], d.parentNode.insertBefore(c, d))
+	}(window, document, "script", "#");
+	fbq("init", "744586543057144");
+	fbq("set", "agent", "tmgoogletagmanager", "744586543057144");
+	fbq("track", "PageView");
+	</script>
+	<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=744586543057144&amp;ev=PageView&amp;noscript=1"></noscript>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+		  // Отримайте елементи DOM
+		  var sidebarButton = document.querySelector('.sidebar-button');
+		  var sidebar = document.querySelector('.sidebar');
+	  
+		  // Додайте слухач подій для кнопки
+		  sidebarButton.addEventListener('click', function () {
+			// Перевірте, чи клас "opened" вже додано до сайдбара
+			var isSidebarOpened = sidebar.classList.contains('opened');
+	  
+			// Змініть клас в залежності від поточного стану
+			if (isSidebarOpened) {
+			  sidebar.classList.remove('opened');
+			  sidebar.classList.add('closed');
+			} else {
+			  sidebar.classList.remove('closed');
+			  sidebar.classList.add('opened');
+			}
+		  });
+		});
+	  </script>
+</body>
+</html>
