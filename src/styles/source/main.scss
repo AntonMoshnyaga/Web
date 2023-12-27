@@ -1412,6 +1412,9 @@ svg:not(:root).svg-inline--fa {
 }
 @import"https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap";
 @import"https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";
+.label {
+    font-family: "src/assets/fonts/montserrat/Montserrat-Bold.woff";
+}
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video {
   margin:0;
   padding:0;
